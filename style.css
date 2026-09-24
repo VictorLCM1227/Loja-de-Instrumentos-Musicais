@@ -437,3 +437,22 @@ RESPONSIVIDADE
 
 
 }
+
+#confianca {
+    background-color: #242321;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+#confianca img {
+    width: 50px;
+    height: auto;
+}
+
+#confianca {
+    text-align: center;
+}
