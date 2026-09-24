@@ -1,10 +1,439 @@
+/* RESET */
+
 * {
-    padding: 0;
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+background: #050505;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
 }
 
-:root {
-    --titulo: ;
-    --preto: #1A1618;
-    --fundo-video: #712121;
+/* =========================
+HERO
+========================= */
+
+.hero {
+position: relative;
+
+
+width: 100%;
+min-height: 100vh;
+
+background-image:
+    linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.25) 55%,
+        rgba(0, 0, 0, 0.05) 100%
+    ),
+    url("imagens/hero.png");
+
+background-size: cover;
+background-position: center;
+
+overflow: hidden;
+
+
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header {
+position: absolute;
+
+
+top: 0;
+left: 0;
+
+width: 100%;
+
+padding: 25px 5%;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+z-index: 10;
+
+}
+
+/* =========================
+LOGO
+========================= */
+
+.logo {
+display: flex;
+align-items: center;
+
+
+gap: 22px;
+
+
+}
+
+.logo-img {
+width: 100px;
+height: auto;
+
+
+display: block;
+
+
+}
+
+.logo-title {
+color: #eee;
+
+
+font-family: Georgia, serif;
+
+font-size: 25px;
+font-weight: bold;
+
+letter-spacing: 8px;
+
+margin: 0;
+
+
+}
+
+/* =========================
+ÍCONE DA PORTA
+========================= */
+
+.logo-door {
+position: relative;
+
+
+width: 28px;
+height: 48px;
+
+border: 3px solid #b40000;
+
+display: block;
+
+
+}
+
+/* DETALHE INTERNO DA PORTA */
+
+.logo-door::before {
+content: "";
+
+
+position: absolute;
+
+width: 15px;
+height: 38px;
+
+top: 2px;
+left: 2px;
+
+border-left: 2px solid #b40000;
+border-bottom: 2px solid #b40000;
+
+
+}
+
+/* =========================
+NAV
+========================= */
+
+.nav {
+display: flex;
+align-items: center;
+
+
+gap: 50px;
+
+
+}
+
+.nav a {
+position: relative;
+
+
+color: #aaa;
+
+text-decoration: none;
+
+font-size: 12px;
+letter-spacing: 3px;
+
+transition: 0.3s;
+
+
+}
+
+.nav a:hover {
+color: white;
+}
+
+/* ITEM ATIVO */
+
+.nav .active {
+color: #d00000;
+}
+
+.nav .active::after {
+content: "";
+
+
+position: absolute;
+
+left: 0;
+bottom: -13px;
+
+width: 100%;
+height: 2px;
+
+background: #d00000;
+
+
+}
+
+/* =========================
+CONTEÚDO
+========================= */
+
+.hero-content {
+position: absolute;
+
+
+top: 50%;
+left: 6.5%;
+
+transform: translateY(-42%);
+
+z-index: 5;
+
+
+}
+
+/* =========================
+SUBTÍTULO
+========================= */
+
+.subtitle {
+display: flex;
+align-items: center;
+
+
+gap: 28px;
+
+margin-bottom: 25px;
+
+
+}
+
+.subtitle span {
+width: 50px;
+height: 2px;
+
+
+background: #a90000;
+
+}
+
+.subtitle p {
+font-size: 12px;
+
+
+letter-spacing: 7px;
+
+color: #ccc;
+
+
+}
+
+/* =========================
+TÍTULO PRINCIPAL
+========================= */
+
+.hero-title {
+font-family: Georgia, "Times New Roman", serif;
+
+font-size: 30px;
+
+line-height: 0.95;
+
+letter-spacing: 7px;
+
+font-weight: bold;
+
+margin-bottom: 30px;
+
+
+}
+
+/* =========================
+DESCRIÇÃO
+========================= */
+
+.description {
+color: #bcbcbc;
+
+
+font-size: 16px;
+
+line-height: 1.8;
+
+letter-spacing: 3px;
+
+margin-bottom: 35px;
+
+
+}
+
+/* =========================
+BOTÃO
+========================= */
+
+.button {
+display: inline-flex;
+
+
+align-items: center;
+justify-content: space-between;
+
+gap: 35px;
+
+padding: 16px 22px;
+
+min-width: 250px;
+
+border: 1px solid #b00000;
+
+color: #ddd;
+
+text-decoration: none;
+
+font-size: 11px;
+
+letter-spacing: 3px;
+
+transition: 0.3s;
+
+
+}
+
+.button strong {
+color: #d00000;
+
+
+font-size: 24px;
+
+font-weight: normal;
+
+
+}
+
+.button:hover {
+background: #b00000;
+
+
+color: white;
+
+
+}
+
+.button:hover strong {
+color: white;
+}
+
+/* =========================
+RESPONSIVIDADE
+========================= */
+
+@media (max-width: 800px) {
+
+
+.header {
+    padding: 20px 6%;
+}
+
+.logo {
+    gap: 12px;
+}
+
+.logo-img {
+    width: 70px;
+}
+
+.logo-title {
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+.logo-door {
+    width: 20px;
+    height: 35px;
+}
+
+.nav {
+    gap: 18px;
+}
+
+.nav a {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.hero-content {
+    left: 7%;
+    right: 7%;
+}
+
+.subtitle {
+    gap: 12px;
+}
+
+.subtitle span {
+    width: 30px;
+}
+
+.subtitle p {
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.hero-title {
+    font-size: 48px;
+}
+
+.description {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+}
+
+@media (max-width: 550px) {
+
+
+.header {
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.nav {
+    gap: 15px;
+}
+
+.hero-content {
+    top: 58%;
+}
+
+.hero-title {
+    font-size: 42px;
+}
+
+
 }
